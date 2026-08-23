@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Valkompass Stockholms l&#228;n &#183; riksdagsvalet 2026</title>
+<meta name="description" content="28 p&#229;st&#229;enden. F&#229; en procentsats mot varje parti p&#229; riksdagsvalsedeln i Stockholms l&#228;n som har en publicerad politisk plattform.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Valkompass Stockholms l&#228;n">
+<meta property="og:description" content="28 p&#229;st&#229;enden, 169 partier p&#229; valsedeln, 32 med publicerad plattform. Se var du landar. Ocks&#229; p&#229; engelska.">
+<meta property="og:locale" content="sv_SE">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary">
+<!-- After hosting, add: <meta property="og:image" content="https://YOURDOMAIN/valkompass-card.png"> and switch twitter:card to summary_large_image -->
+<meta name="twitter:title" content="Valkompass Stockholms l&#228;n">
+<meta name="twitter:description" content="28 p&#229;st&#229;enden, 169 partier p&#229; valsedeln, 32 med publicerad plattform. Se var du landar.">
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#E9EDF2; --card:#FFFFFF; --card-2:#F4F7FA; --card-3:#FBFCFD;
+  --ink:#141A23; --ink-2:#57616F; --ink-3:#8C97A5;
+  --line:#CFD7E1; --line-2:#E3E9F0;
+  --gul:#F2C230; --gul-deep:#C8971A; --gul-ink:#43330A;
+  --bla:#2C5F8A;
+  --agree:#2C6B54; --disagree:#A8412E;
+  --focus:#2B5FA8;
+  --sh-1:0 1px 2px rgba(20,26,35,.05);
+  --sh-2:0 1px 2px rgba(20,26,35,.06), 0 10px 30px -8px rgba(20,26,35,.14);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F1319; --card:#181E26; --card-2:#1F262F; --card-3:#232B35;
+    --ink:#E8EDF4; --ink-2:#98A4B3; --ink-3:#6D798A;
+    --line:#2B333E; --line-2:#222932;
+    --gul:#F2C230; --gul-deep:#F2C230; --gul-ink:#2B2106;
+    --bla:#6FA5D6;
+    --agree:#5FBF9B; --disagree:#E8846C;
+    --focus:#7FB0F0;
+    --sh-1:0 1px 2px rgba(0,0,0,.4);
+    --sh-2:0 1px 2px rgba(0,0,0,.45), 0 12px 34px -10px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F1319; --card:#181E26; --card-2:#1F262F; --card-3:#232B35;
+  --ink:#E8EDF4; --ink-2:#98A4B3; --ink-3:#6D798A;
+  --line:#2B333E; --line-2:#222932;
+  --gul:#F2C230; --gul-deep:#F2C230; --gul-ink:#2B2106;
+  --bla:#6FA5D6;
+  --agree:#5FBF9B; --disagree:#E8846C;
+  --focus:#7FB0F0;
+  --sh-1:0 1px 2px rgba(0,0,0,.4);
+  --sh-2:0 1px 2px rgba(0,0,0,.45), 0 12px 34px -10px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Source Serif 4",Georgia,"Times New Roman",serif;
+  font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;text-wrap:balance;letter-spacing:-.02em;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:none;padding:0}
+:focus-visible{outline:2.5px solid var(--focus);outline-offset:2px;border-radius:3px}
+.wrap{max-width:780px;margin:0 auto;padding:0 22px 110px}
+
+/* ============ ballot head ============ */
+.masthead{background:var(--card);border-bottom:1px solid var(--line);position:relative}
+.masthead::after{
+  content:"";position:absolute;left:0;right:0;bottom:-9px;height:9px;
+  background:var(--card);
+  -webkit-mask:radial-gradient(circle 5px at 9px 0,transparent 98%,#000) repeat-x 0 0/18px 9px;
+  mask:radial-gradient(circle 5px at 9px 0,transparent 98%,#000) repeat-x 0 0/18px 9px;
+}
+.mh{max-width:780px;margin:0 auto;padding:24px 22px 26px;display:flex;flex-direction:column;gap:16px}
+.mh-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.slug{display:flex;align-items:center;gap:11px;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-2)}
+.swatch{width:30px;height:14px;background:var(--gul);border:1px solid rgba(0,0,0,.22);border-radius:1.5px;flex:none;box-shadow:inset 0 -3px 0 rgba(0,0,0,.07)}
+h1{font-size:clamp(32px,6.6vw,50px);font-weight:800;line-height:.98}
+h1 .thin{display:block;font-weight:500;color:var(--ink-2);font-size:.52em;letter-spacing:-.01em;margin-top:.32em}
+.lede{margin:0;color:var(--ink-2);font-size:17px;max-width:60ch}
+
+/* language switch */
+.lang{display:flex;gap:0;border:1px solid var(--line);border-radius:99px;overflow:hidden;flex:none;background:var(--card-2)}
+.lang button{display:flex;align-items:center;gap:7px;padding:7px 13px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;color:var(--ink-3);transition:background .14s,color .14s}
+.lang button+button{border-left:1px solid var(--line)}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.lang .fl{font-size:15px;line-height:1;filter:saturate(1.05)}
+
+/* tally strip */
+.tally{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--line-2)}
+.tally div{flex:1 1 130px;background:var(--card-2);padding:11px 14px;display:flex;flex-direction:column;gap:2px}
+.tally b{font-family:"IBM Plex Mono",monospace;font-size:20px;font-weight:600;letter-spacing:-.02em}
+.tally span{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);line-height:1.35}
+.tally div:nth-child(1) b{color:var(--ink)}
+.tally div:nth-child(2) b{color:var(--agree)}
+.tally div:nth-child(3) b{color:var(--ink-3)}
+
+/* ============ progress ============ */
+.prog{position:sticky;top:0;z-index:8;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line-2)}
+.prog .in{max-width:780px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:15px}
+.ticks{flex:1;display:flex;gap:2px;height:8px}
+.tick{flex:1;background:var(--line);border-radius:1px;transition:background .2s}
+.tick.done{background:var(--gul)}
+.tick.now{background:var(--ink)}
+.pc{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-2);white-space:nowrap;letter-spacing:.04em}
+
+/* ============ question ============ */
+.card{background:var(--card);border:1px solid var(--line);border-radius:5px;box-shadow:var(--sh-2);padding:0;margin-top:28px;overflow:hidden}
+.card-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 24px;border-bottom:1px solid var(--line-2);background:var(--card-3)}
+.area{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gul-ink);background:var(--gul);padding:3px 9px;border-radius:2px;font-weight:600}
+.qno{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.06em}
+.card-bd{padding:26px 24px 22px}
+.qtext{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:clamp(22px,3.9vw,29px);line-height:1.2;margin:0 0 24px;text-wrap:balance}
+.scale{display:flex;flex-direction:column;gap:6px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--card-2);border:1px solid var(--line-2);border-radius:3px;padding:13px 15px;transition:border-color .13s,background .13s,transform .13s,box-shadow .13s;position:relative}
+.opt:hover{border-color:var(--ink-3);transform:translateX(3px);box-shadow:var(--sh-1)}
+.opt .kbd{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);border:1px solid var(--line);border-radius:2px;width:21px;height:21px;display:grid;place-items:center;flex:none}
+.opt .box{width:15px;height:15px;border:1.5px solid currentColor;border-radius:2px;flex:none;display:grid;place-items:center;position:relative}
+.opt .box::after{content:"";width:9px;height:9px;background:currentColor;border-radius:1px;transform:scale(0);transition:transform .13s cubic-bezier(.3,1.5,.5,1)}
+.opt[aria-pressed="true"] .box::after{transform:scale(1)}
+.opt .lbl{flex:1}
+.o-2,.o-1{color:var(--disagree)} .o0{color:var(--ink-3)} .o1,.o2{color:var(--agree)}
+.o-1,.o1{opacity:.88}
+.opt[aria-pressed="true"]{background:var(--gul);border-color:var(--gul-deep);color:var(--gul-ink);opacity:1}
+.opt[aria-pressed="true"] .kbd{border-color:rgba(0,0,0,.28);color:inherit}
+
+.weight{display:flex;align-items:center;gap:11px;margin-top:22px;padding-top:17px;border-top:1px dashed var(--line);flex-wrap:wrap}
+.weight>span{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.chip{border:1px solid var(--line);border-radius:99px;padding:5px 13px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-2);transition:all .13s}
+.chip:hover{border-color:var(--ink-3)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+.nav{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:15px 24px;border-top:1px solid var(--line-2);background:var(--card-3)}
+.btn{border:1px solid var(--line);border-radius:3px;padding:9px 17px;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:14.5px;transition:all .13s}
+.btn:hover{border-color:var(--ink-2)}
+.btn.pri{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn.pri:hover{opacity:.87}
+.btn[disabled]{opacity:.32;cursor:not-allowed}
+.xbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.xbtn:hover{opacity:.87;border-color:var(--ink)}
+.xbtn svg{width:14px;height:14px;flex:none}
+.hint{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);text-align:center;margin:15px 0 0;letter-spacing:.03em}
+.hint kbd{border:1px solid var(--line);border-radius:2px;padding:1px 4px;font-family:inherit}
+
+/* ============ compass plot ============ */
+.plotwrap{background:var(--card);border:1px solid var(--line);border-radius:5px;box-shadow:var(--sh-2);margin-top:22px;overflow:hidden}
+.plot-hd{padding:13px 20px;border-bottom:1px solid var(--line-2);background:var(--card-3);font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.plot{position:relative;aspect-ratio:1/1;margin:20px;background:
+  linear-gradient(var(--line-2) 1px,transparent 1px) 0 0/100% 25%,
+  linear-gradient(90deg,var(--line-2) 1px,transparent 1px) 0 0/25% 100%;
+  border:1px solid var(--line)}
+.plot .ax{position:absolute;background:var(--line);z-index:1}
+.plot .ax.h{left:0;right:0;top:50%;height:1.5px}
+.plot .ax.v{top:0;bottom:0;left:50%;width:1.5px}
+.plot .axlbl{position:absolute;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);z-index:2}
+.axlbl.n{top:6px;left:50%;transform:translateX(-50%)}
+.axlbl.s{bottom:6px;left:50%;transform:translateX(-50%)}
+.axlbl.w{left:6px;top:50%;transform:translateY(-50%) rotate(-90deg);transform-origin:left center}
+.axlbl.e{right:6px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:right center}
+.dot{position:absolute;width:9px;height:9px;border-radius:99px;transform:translate(-50%,-50%);z-index:3;border:1.5px solid var(--card)}
+.dot.big{width:17px;height:17px;background:var(--ink);border:3px solid var(--gul);z-index:5;box-shadow:0 0 0 3px color-mix(in srgb,var(--gul) 30%,transparent)}
+.dot em{position:absolute;left:130%;top:50%;transform:translateY(-50%);font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:9px;color:var(--ink-2);white-space:nowrap;letter-spacing:.03em}
+.dot.flip em{left:auto;right:130%}
+.dot.big em{font-family:"Bricolage Grotesque",sans-serif;font-size:11px;font-weight:700;color:var(--ink);letter-spacing:0}
+.plot-ft{padding:0 20px 18px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);line-height:1.6}
+
+/* ============ results ============ */
+.res-hd{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin:34px 0 0}
+.res-hd h2{font-size:clamp(25px,4.8vw,34px);font-weight:800}
+.res-hd .mono{font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+.rows{display:flex;flex-direction:column;gap:1px;margin-top:18px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--line-2);box-shadow:var(--sh-1)}
+.row{background:var(--card);padding:12px 16px;display:grid;grid-template-columns:24px 1fr 100px 56px;gap:14px;align-items:center;transition:background .13s}
+.row:hover{background:var(--card-2)}
+.row.gold{background:linear-gradient(90deg,color-mix(in srgb,var(--gul) 16%,var(--card)),var(--card) 62%)}
+.rk{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);text-align:right}
+.row.gold .rk{color:var(--gul-deep);font-weight:600}
+.pname{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:15px;display:flex;align-items:center;gap:9px;min-width:0;letter-spacing:-.01em}
+.pname i{width:4px;height:19px;border-radius:99px;flex:none}
+.pname s{text-decoration:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pname em{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10px;color:var(--ink-3);border:1px solid var(--line);border-radius:2px;padding:1px 5px;flex:none}
+.bar{height:8px;background:var(--line-2);border-radius:99px;overflow:hidden}
+.bar span{display:block;height:100%;border-radius:99px;transition:width .5s cubic-bezier(.3,0,.2,1)}
+.pct{font-family:"IBM Plex Mono",monospace;font-size:14.5px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cov{grid-column:2/-1;font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--ink-3);margin-top:4px;letter-spacing:.02em}
+.warn{grid-column:2/-1;font-size:12.5px;color:var(--disagree);margin-top:5px;font-style:italic;line-height:1.4}
+@media(max-width:600px){
+  .row{grid-template-columns:20px 1fr 50px}
+  .bar{grid-column:2/-1;order:3;margin-top:6px}
+  .pct{order:2}
+}
+
+.note{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--gul);border-radius:3px;padding:17px 19px;margin-top:24px;font-size:15.5px;color:var(--ink-2)}
+.note.blue{border-left-color:var(--bla)}
+.note b{color:var(--ink)}
+details{background:var(--card);border:1px solid var(--line);border-radius:5px;margin-top:20px}
+summary{padding:15px 19px;font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:14.5px;cursor:pointer;letter-spacing:-.01em}
+summary:hover{color:var(--bla)}
+.plist{padding:2px 19px 19px;columns:2;column-gap:28px;font-size:13.5px;color:var(--ink-2)}
+.plist div{break-inside:avoid;padding:2.5px 0}
+@media(max-width:600px){.plist{columns:1}}
+.foot{max-width:780px;margin:0 auto;padding:36px 22px 44px;font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-3);line-height:1.75}
+.foot a{color:var(--ink-2)}
+.hide{display:none}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script type="module">
+/* ---------------- statements ---------------- */
+const Q = [
+ ["Migration","Migration","Sverige ska ta emot fler asyls\u00f6kande \u00e4n i dag.","Sweden should accept more asylum seekers than it does today."],
+ ["Migration","Migration","Det ska bli l\u00e4ttare att f\u00e5 svenskt medborgarskap.","Swedish citizenship should be easier to obtain."],
+ ["Migration","Migration","Utl\u00e4ndska medborgare som beg\u00e5r brott ska utvisas i fler fall \u00e4n i dag.","Foreign nationals who commit crimes should be deported in more cases than today."],
+ ["Ekonomi","Economy","Skatten p\u00e5 h\u00f6ga inkomster ska s\u00e4nkas.","Taxes on high incomes should be cut."],
+ ["Ekonomi","Economy","En statlig f\u00f6rm\u00f6genhetsskatt ska \u00e5terinf\u00f6ras.","A national wealth tax should be reintroduced."],
+ ["Ekonomi","Economy","Vinstutdelning i skattefinansierad v\u00e4lf\u00e4rd ska f\u00f6rbjudas.","Profit distribution in tax-funded welfare services should be banned."],
+ ["V\u00e4lf\u00e4rd","Welfare","Staten ska ta \u00f6ver driften av sjukv\u00e5rden fr\u00e5n regionerna.","The state should take over running healthcare from the regions."],
+ ["V\u00e4lf\u00e4rd","Welfare","A-kassan ska h\u00f6jas.","Unemployment benefits should be raised."],
+ ["V\u00e4lf\u00e4rd","Welfare","Pensionerna ska h\u00f6jas \u00e4ven om det kr\u00e4ver h\u00f6jda skatter.","Pensions should be raised even if it requires higher taxes."],
+ ["Klimat","Climate","Sverige ska bygga ny k\u00e4rnkraft med statliga subventioner.","Sweden should build new nuclear power with state subsidies."],
+ ["Klimat","Climate","Bensin- och dieselskatten ska s\u00e4nkas.","Fuel taxes on petrol and diesel should be cut."],
+ ["Klimat","Climate","Sverige ska n\u00e5 nettonollutsl\u00e4pp tidigare \u00e4n 2045.","Sweden should reach net zero emissions earlier than 2045."],
+ ["Brott","Crime","Straffen f\u00f6r v\u00e5ldsbrott ska sk\u00e4rpas kraftigt.","Sentences for violent crime should be increased sharply."],
+ ["Brott","Crime","Polisen ska f\u00e5 anv\u00e4nda hemlig avlyssning och anonyma vittnen i fler fall.","Police should be allowed to use secret surveillance and anonymous witnesses in more cases."],
+ ["Brott","Crime","Eget bruk av narkotika ska avkriminaliseras.","Personal drug use should be decriminalised."],
+ ["F\u00f6rsvar","Defence","F\u00f6rsvarsanslagen ska h\u00f6jas till minst 3,5 procent av BNP.","Defence spending should rise to at least 3.5 percent of GDP."],
+ ["EU","EU","Sverige ska l\u00e4mna EU.","Sweden should leave the EU."],
+ ["EU","EU","Sverige ska inf\u00f6ra euron som valuta.","Sweden should adopt the euro."],
+ ["Skola","Schools","Vinstdrivande friskolor ska f\u00f6rbjudas.","For-profit free schools should be banned."],
+ ["Skola","Schools","Betyg ska ges tidigare \u00e4n i \u00e5rskurs 6.","Grades should be given earlier than year 6."],
+ ["Skola","Schools","Skolan ska f\u00f6rstatligas.","Schools should be nationalised."],
+ ["Kultur","Culture","Public service ska ha mindre statlig finansiering.","Public broadcasting should get less state funding."],
+ ["Kultur","Culture","Religi\u00f6sa friskolor ska f\u00f6rbjudas.","Faith-based free schools should be banned."],
+ ["V\u00e4rderingar","Values","Sverige ska ha en mer restriktiv abortlagstiftning.","Sweden should have more restrictive abortion law."],
+ ["V\u00e4rderingar","Values","Djurens r\u00e4ttigheter ska st\u00e4rkas kraftigt, \u00e4ven om maten blir dyrare.","Animal rights should be strengthened substantially, even if food gets more expensive."],
+ ["Demokrati","Democracy","Fler beslut ska fattas genom folkomr\u00f6stningar.","More decisions should be made by referendum."],
+ ["Demokrati","Democracy","Mass\u00f6vervakning och datalagring ska begr\u00e4nsas till f\u00f6rm\u00e5n f\u00f6r personlig integritet.","Mass surveillance and data retention should be curbed in favour of personal privacy."],
+ ["Bost\u00e4der","Housing","Nybyggnation ska styras mot klassisk arkitektur som passar stadsbilden.","New construction should be steered towards classical architecture that fits the townscape."]
+];
+
+/* -------- party positions, -2..+2, 0 = no stated position (not counted) -------- */
+const P = [
+ ["V\u00e4nsterpartiet","V","#B0182B",[2,2,-1,-2,2,2,1,2,2,-2,-1,2,-1,-2,1,-1,-1,-2,2,-2,0,-2,2,-2,1,0,2,0]],
+ ["Arbetarepartiet-Socialdemokraterna","S","#D8253A",[0,-1,1,-2,0,1,0,1,1,1,0,1,2,1,-2,2,-2,-2,1,-1,0,-2,1,-2,0,-1,0,0]],
+ ["Milj\u00f6partiet de gr\u00f6na","MP","#4F8F2B",[2,1,-1,-2,1,1,0,1,0,-2,-2,2,-1,-2,1,0,-2,-1,1,-2,-1,-2,1,-2,2,0,2,0]],
+ ["Centerpartiet","C","#1E7A3C",[0,0,1,1,-2,-2,-2,-1,0,0,1,1,1,1,-1,2,-2,-1,-2,1,-2,-1,0,-2,1,-1,1,0]],
+ ["Liberalerna (tidigare Folkpartiet)","L","#0A6BB5",[0,-1,2,2,-2,-2,2,-1,-1,2,0,1,2,2,-2,2,-2,2,-2,2,2,-1,2,-2,0,-2,-1,0]],
+ ["Kristdemokraterna","KD","#1B4C8C",[-1,-1,2,2,-2,-2,2,-1,1,2,1,0,2,2,-2,2,-1,-2,-2,2,0,1,-2,0,0,-1,-1,1]],
+ ["Moderaterna","M","#1B4A8F",[-1,-1,2,2,-2,-2,0,-2,0,2,1,0,2,2,-2,2,-2,-1,-2,2,0,1,1,-2,0,-2,-1,0]],
+ ["Sverigedemokraterna","SD","#DDB024",[-2,-2,2,0,-1,-1,2,0,2,2,2,-2,2,2,-2,2,0,-2,-1,2,2,2,2,-1,1,1,-1,2]],
+ ["Alternativ f\u00f6r Sverige","AfS","#7A4F1C",[-2,-2,2,1,-2,-1,1,-1,2,2,2,-2,2,2,-2,2,2,-2,0,2,1,2,2,0,0,2,0,2]],
+ ["Medborgerlig Samling","MED","#2E5C6E",[-2,-2,2,2,-2,-2,1,-2,0,2,1,-1,2,1,-1,2,-1,-2,-2,2,2,2,1,-1,0,0,1,1]],
+ ["Folklistan","FL","#8A6A2E",[-2,-2,2,1,-2,-1,1,0,2,2,2,-2,2,1,-2,1,1,-2,0,1,1,2,1,-1,1,2,1,1]],
+ ["Partiet Nyans","NY","#2B7F7A",[2,2,-2,0,0,0,0,1,1,0,0,0,-1,-2,-1,0,-1,0,-2,0,-1,0,-2,0,0,1,1,0]],
+ ["Piratpartiet","PP","#6B3FA0",[1,1,-1,0,-1,0,0,1,0,0,0,1,-1,-2,2,0,-1,0,0,-1,0,0,0,-2,1,2,2,0]],
+ ["Kristna V\u00e4rdepartiet","KrV","#4A6B8A",[-1,-1,2,1,-1,-1,0,0,1,2,1,-1,2,1,-2,1,1,-2,-2,2,-2,2,-2,2,0,1,0,1]],
+ ["Kristna Frihetspartiet","KrF","#5C7E9E",[0,0,1,0,-1,-1,0,0,1,1,1,0,2,1,-2,1,0,-2,-2,1,-1,1,-2,2,1,1,0,1]],
+ ["Landsbygdspartiet Oberoende","LPo","#6E7D3A",[-2,-1,2,0,-1,-1,1,0,1,1,2,-2,2,1,-2,1,2,-2,0,1,0,1,1,-1,1,2,1,1]],
+ ["Kommunistiska Partiet","K","#A01423",[1,1,-1,-2,2,2,2,2,2,0,0,1,-1,-2,0,-2,2,-2,2,-2,2,-1,2,-2,0,1,2,0]],
+ ["SKP KOMMUNISTERNA","SKP","#8C1220",[1,1,-1,-2,2,2,2,2,2,1,0,1,-1,-2,0,-2,2,-2,2,-1,2,-1,2,-2,0,1,2,0]],
+ ["Socialistpartiet","SP","#C41E2E",[2,2,-2,-2,2,2,2,2,2,-2,0,2,-2,-2,1,-2,2,-2,2,-2,2,-1,1,-2,1,1,2,0]],
+ ["Klassiskt liberala partiet","KLP","#C08A2E",[1,1,1,2,-2,-2,-2,-2,-2,0,2,-1,1,-2,2,0,-1,0,-2,1,-2,2,0,-2,0,1,2,0]],
+ ["Libertarianerna","LIB","#9B7A24",[1,1,1,2,-2,-2,-2,-2,-2,0,2,-2,1,-2,2,-1,1,-1,-2,0,-2,2,-1,-1,0,1,2,0]],
+ ["Enhet","EN","#5E8F7E",[2,1,-2,-1,1,1,0,1,1,-2,-1,2,-2,-2,1,-2,-1,0,0,-2,-1,0,0,-1,2,2,2,0]],
+ ["Djurv\u00e4nners Parti","DjP","#4E8C4A",[0,0,0,0,0,0,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,0]],
+ ["Volt","VOLT","#5A2E8C",[2,2,0,-1,1,0,0,1,0,1,-1,2,-1,-1,1,2,-2,2,-1,-1,0,-2,1,-2,1,1,1,0]],
+ ["Direktdemokraterna","DD","#3E6E8C",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,0]],
+ ["H\u00f6gerpartiet de konservativa","HdK","#3A3A6B",[-2,-2,2,2,-2,-2,1,-2,1,2,2,-2,2,2,-2,2,2,-2,-2,2,0,2,0,1,0,1,0,2]],
+ ["Partiet V\u00e4ndpunkt","VP","#3E8C6E",[2,2,-2,-2,2,2,1,2,1,-2,-2,2,-2,-2,1,-2,-1,0,2,-2,0,-1,1,-2,2,1,2,0]],
+ ["Pensionspartiet","PENS","#7A6E8C",[0,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],
+ ["Stoppa Drogkriget","SDK","#2E8C8C",[0,0,0,0,0,0,0,0,0,0,0,0,-1,-1,2,0,0,0,0,0,0,0,0,0,0,0,1,0]],
+ ["Sekul\u00e4ra Humanistiska Partiet","SHP","#4A6E9E",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,-2,0,0,1,0]],
+ ["Partiet Arkitekturupproret","ARK","#8C6E4A",[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2]],
+ ["Nordiska motst\u00e5ndsr\u00f6relsen","NMR","#5A5A5A",[-2,-2,2,0,1,1,2,1,2,2,2,-2,2,2,-2,2,2,-2,2,2,2,2,2,1,1,-1,0,2],1]
+];
+
+const BALLOT = ["99 Svarta ballonger","AI partiet","Alternativ f\u00f6r Sverige","Alternativ Sanning","Alternative for Immigrants","Ambition Sverige","AMORISTERNA","ANARKISTERNA","ansvarsfull intelligens i politiken","ANTI-AUKTORIT\u00c4RA AKTIONS PARTIET","Anti-partiet Partiet","Arbetarepartiet-Socialdemokraterna","BarnDemokraterna","Bondesrepublikanerna","Centerpartiet","CIVIS","Common sense in Sweden","Demokrati, Folk och Religion (DFR)","Det sunda partiet","DIN MAKT","Direktdemokraterna","Djurv\u00e4nners Parti","Ekorrepartiet","Elbira partiet","EMPATI&CO","En Vis Avskaffar Asylr\u00e4tten!","Enad Politik","Enad R\u00f6st","Enade Sverige","Enhet","Enighet Europa","Enighetspartiet","Ett Bra Sverige","Ett modernt land","Evelinas parti","EVOLT FOLKHANSA","FAMILJENS FRIHET","Fenix Partiet","Folkets Parti i Sverige","Folklistan","Folkr\u00e5det","FramtidsTro","Fred och demokrati","FREDS OCH FRIHETSPARTIER","Fredspartiet","Fria Partiet","Fria Wermland","FRIDSLAGET","Fritt val","F\u00f6r Allas B\u00e4sta","F\u00f6retaget Sverige","F\u00f6rs\u00f6rjningsst\u00f6dspartiet","Gemensam S\u00e4kerhet","Globala partiet","Hampans v\u00e4nner","Humankapitalisterna","Humlanochhusen","H\u00f6gerpartiet de konservativa","Jarl","JESUS","Johannespartiet med extra \u00e4lg","Jojo Beyonde Befolkningsparti (JBBP)","Jonathan Hemph","Kalle Ankapartiet","Klassiskt liberala partiet","Knapptryckarna","koalitionsbyggarna.se","Kommunistiska Partiet","Kompass","Kristdemokraterna","Kristna Frihetspartiet","Kristna V\u00e4rdepartiet","Kunskapsdemokratiska Partiet","Kustkult","K\u00e5nitton","Landsbygdspartiet Oberoende","Liberalerna (tidigare Folkpartiet)","Libertarianerna","Majoriteten","Mannaminne Sverige","Medborgerlig Samling","Medk\u00e4nsla","Milj\u00f6partiet de gr\u00f6na","MoD - M\u00e4nskliga r\u00e4ttigheter och Demokrati","Moderaterna","Multidimensionella Partiet","Naturistpartiet","NEUTRALITET","NO Filter Partiet [NFP]","Nordiska motst\u00e5ndsr\u00f6relsen","Ny Allians","NY REFORM","Nya Svenskar","N\u00e5got Annat","O","Ond Kyckling Partiet","Origo","Paradisets Coola \u00c4nglar","Partiet","Partiet Arkitekturupproret","Partiet Folkomr\u00f6stning","Partiet F\u00f6rnuft","Partiet Nyans","Partiet Tomma Stolarna (Demokraterna)","Partiet V\u00e4ndpunkt","PARTY PEOPLE","Patriot Narke","Pax","Pensionspartiet","Piratpartiet","Politiskt Er\u00f6vrande Demokratiska Organisationen","Pragmatiskt Initiativ","Presidency","PRJ -Partiet f\u00f6r R\u00e4ttvisa och J\u00e4mst\u00e4lldhet","Progress","Progressivistpartiet","Proxypartiet","Quisling-partiet","RegleraAI.nu","Republic","Resurs Demokrati","Revolutionspartiet","Riket","Rymdraketerna","R\u00e4dda Sverige!","Samlade Demokrater","Sekul\u00e4ra Humanistiska Partiet","Skogsfolket","SKP KOMMUNISTERNA","Socialistpartiet","Socialliberalerna","Solens Frihetsparti","Stj\u00e4rnpartiet Sverige","Stoppa AI-kapprustningen","Stoppa Drogkriget","Svensk-Finska Unionspartiet","Sverige i valsamverkan","Sverige r\u00f6star","Sverigedemokraterna","SVERIGES INTELLEKTUELLA DEMOKRATER","Sveriges Nationella Demokratiska Parti","Sveriges Oberoende Ledam\u00f6ter","SYMPARTIET","S\u00e4kerhetspartiet","The Jarl","The unforgiven","Tid\u00f6","Tomas Lindstr\u00f6m","Tristdemokraterna","TRYGGHETSPARTIET","Tulipan","Ungdomspartiet","Upplysningspartiet","Upprorsdemokraterna","Utbildningspartiet","Valsamverkanspartiet","Venstre Sverige","Viking","Vindarna","Vindkraft- och Busskartor Partiet (Vi \u00e4lskar AIPAC) (VBPV\u00c4AIPAC)","Vinningspartiet","Visionpartiet","Volt","V\u00e5gen","V\u00e4nsterpartiet","V\u00e4rldspartiet","WILLY TIGER","YN Demokraterna","\u00d6rebropartiet"];
+
+const NOPLAT = BALLOT.filter(n=>!P.some(p=>p[0]===n));
+
+/* ---------------- copy ---------------- */
+const T = {
+ sv:{
+  slug:"Valsedel \u00b7 gul \u00b7 val till riksdagen 2026",
+  h1:"Valkompass", h1sub:"Stockholms l\u00e4n \u00b7 valkrets 2",
+  lede:"28 p\u00e5st\u00e5enden. Du f\u00e5r en procentsats mot varje parti som st\u00e5r p\u00e5 riksdagsvalsedeln i valkrets 2 och har en publicerad politisk plattform.",
+  tally:[["169","partier p\u00e5 valsedeln"],["32","med publicerad plattform"],[String(NOPLAT.length),"utan angivna st\u00e5ndpunkter"]],
+  answered:n=>`${n} / ${Q.length} besvarade`,
+  qno:(a,b)=>`P\u00e5st\u00e5ende ${a} av ${b}`,
+  scale:[[-2,"H\u00e5ller inte alls med"],[-1,"H\u00e5ller delvis inte med"],[0,"Ingen \u00e5sikt / vet inte"],[1,"H\u00e5ller delvis med"],[2,"H\u00e5ller helt med"]],
+  weight:"Viktighet", wNorm:"Normal", wHigh:"Extra viktig \u00d72",
+  prev:"\u2190 F\u00f6reg\u00e5ende", next:"N\u00e4sta \u2192", show:"Visa resultat",
+  hint:'Tryck <kbd>1</kbd>\u2013<kbd>5</kbd> f\u00f6r att svara, <kbd>V</kbd> f\u00f6r extra viktig, <kbd>\u2190</kbd> <kbd>\u2192</kbd> f\u00f6r att bl\u00e4ddra',
+  resTitle:"Dina partisympatier",
+  resMeta:n=>`${n} av ${Q.length} p\u00e5st\u00e5enden besvarade`,
+  cov:(c,t,raw)=>`st\u00e5ndpunkt i ${c} av dina ${t} svarade fr\u00e5gor \u00b7 r\u00e5matchning ${raw} %`,
+  nmr:"Nazistisk organisation. Redovisas eftersom partiet st\u00e5r p\u00e5 valsedeln. Ingen rekommendation.",
+  plotHd:"Var du landar",
+  axN:"Konservativ \u00b7 auktorit\u00e4r", axS:"Liberal \u00b7 frihetlig", axW:"V\u00e4nster", axE:"H\u00f6ger",
+  you:"Du",
+  plotFt:"V\u00e4nster\u2013h\u00f6ger r\u00e4knas fr\u00e5n fr\u00e5gorna om skatt, f\u00f6rm\u00f6genhetsskatt, vinster i v\u00e4lf\u00e4rden, a-kassa, friskolor och public service. Den lodr\u00e4ta axeln r\u00e4knas fr\u00e5n migration, straff, \u00f6vervakning, narkotika och abort. Endast partier med st\u00e5ndpunkt p\u00e5 b\u00e5da axlarna visas.",
+  howHd:"S\u00e5 r\u00e4knas procenten.",
+  how:m=>`F\u00f6r varje fr\u00e5ga d\u00e4r partiet har en uttalad st\u00e5ndpunkt j\u00e4mf\u00f6rs ditt svar med partiets p\u00e5 skalan \u22122 till +2. Fr\u00e5gor du markerat som extra viktiga v\u00e4ger dubbelt. Ett parti som bara har st\u00e5ndpunkt i ett par fr\u00e5gor dras mot 50 % (Bayesiansk utj\u00e4mning, m=${m}) s\u00e5 att en tunn matchning inte hamnar \u00f6verst p\u00e5 en enda fr\u00e5ga. <b>R\u00e5matchning</b> \u00e4r samma siffra utan utj\u00e4mning.`,
+  gapHd:n=>`${n} av de 169 partierna kan inte po\u00e4ngs\u00e4ttas.`,
+  gap:"Det \u00e4r enmanslistor, sk\u00e4mtpartier och nybildade partier utan publicerat program. Att r\u00e4kna fram en procentsats mot dem skulle inneb\u00e4ra att deras politik hittades p\u00e5. De redovisas h\u00e4r i sin helhet i st\u00e4llet.",
+  listSum:n=>`Visa alla ${n} partier utan angivna st\u00e5ndpunkter`,
+  back:"\u2190 \u00c4ndra svar", again:"B\u00f6rja om",
+  shareX:"Dela p\u00e5 X",
+  shareLead:"Jag k\u00f6rde valkompassen f\u00f6r Stockholms l\u00e4n inf\u00f6r riksdagsvalet 2026. Mina tre n\u00e4rmaste partier:",
+  shareTag:"#val2026 #valkompassen",
+  noAns:"Svara p\u00e5 minst ett p\u00e5st\u00e5ende f\u00f6rst.",
+  foot:`Partilistan h\u00e4mtad fr\u00e5n Valmyndighetens valpresentation, valtyp RD, omr\u00e5de 2 (Stockholms l\u00e4n), 2026-08-23 \u00b7 <a href="https://data.val.se/val2026/partier/valsedlar/valtyp/RD/omrade/2">data.val.se</a><br>St\u00e5ndpunkterna \u00e4r sammanst\u00e4llda fr\u00e5n partiernas egna program och offentliga utspel och \u00e4r en tolkning, inte partiernas egna enk\u00e4tsvar.<br>Att ett parti finns med i listan \u00e4r ingen rekommendation. Alla registrerade partier p\u00e5 valsedeln redovisas.`
+ },
+ en:{
+  slug:"Ballot paper \u00b7 yellow \u00b7 Swedish general election 2026",
+  h1:"Election Compass", h1sub:"Stockholm County \u00b7 constituency 2",
+  lede:"28 statements. You get a match percentage against every party on the parliamentary ballot in constituency 2 that has a published political platform.",
+  tally:[["169","parties on the ballot"],["32","with a published platform"],[String(NOPLAT.length),"with no stated positions"]],
+  answered:n=>`${n} / ${Q.length} answered`,
+  qno:(a,b)=>`Statement ${a} of ${b}`,
+  scale:[[-2,"Strongly disagree"],[-1,"Somewhat disagree"],[0,"No opinion / don't know"],[1,"Somewhat agree"],[2,"Strongly agree"]],
+  weight:"Importance", wNorm:"Normal", wHigh:"Extra important \u00d72",
+  prev:"\u2190 Previous", next:"Next \u2192", show:"Show results",
+  hint:'Press <kbd>1</kbd>\u2013<kbd>5</kbd> to answer, <kbd>V</kbd> for extra important, <kbd>\u2190</kbd> <kbd>\u2192</kbd> to move',
+  resTitle:"Your party matches",
+  resMeta:n=>`${n} of ${Q.length} statements answered`,
+  cov:(c,t,raw)=>`stated position on ${c} of your ${t} answered questions \u00b7 raw match ${raw}%`,
+  nmr:"Neo-Nazi organisation. Listed because the party appears on the ballot. Not a recommendation.",
+  plotHd:"Where you land",
+  axN:"Conservative \u00b7 authoritarian", axS:"Liberal \u00b7 libertarian", axW:"Left", axE:"Right",
+  you:"You",
+  plotFt:"The left\u2013right axis is derived from the questions on income tax, wealth tax, welfare profits, unemployment benefits, free schools and public broadcasting. The vertical axis is derived from migration, sentencing, surveillance, drugs and abortion. Only parties with a stated position on both axes are plotted.",
+  howHd:"How the percentage works.",
+  how:m=>`For every question where a party has a stated position, your answer is compared with theirs on a \u22122 to +2 scale. Questions you marked extra important count double. A party with a position on only a couple of questions is pulled towards 50% (Bayesian shrinkage, m=${m}), so a thin match cannot top the list on a single question. <b>Raw match</b> is the same figure without shrinkage.`,
+  gapHd:n=>`${n} of the 169 parties cannot be scored.`,
+  gap:"These are one-person lists, joke parties and newly formed parties with no published programme. Producing a match percentage against them would mean inventing their politics. They are listed here in full instead.",
+  listSum:n=>`Show all ${n} parties with no stated positions`,
+  back:"\u2190 Change answers", again:"Start over",
+  shareX:"Share on X",
+  shareLead:"I took the election compass for Stockholm County ahead of Sweden's 2026 general election. My three closest parties:",
+  shareTag:"#val2026 #swedishelection",
+  noAns:"Answer at least one statement first.",
+  foot:`Party list retrieved from the Swedish Election Authority's election presentation, election type RD, area 2 (Stockholm County), 2026-08-23 \u00b7 <a href="https://data.val.se/val2026/partier/valsedlar/valtyp/RD/omrade/2">data.val.se</a><br>Party positions are compiled from the parties' own programmes and public statements. They are an interpretation, not the parties' own survey answers.<br>Inclusion in this list is not a recommendation. Every registered party on the ballot is shown.`
+ }
+};
+
+/* ---------------- compass axes ---------------- */
+const ECON = {3:1, 4:-1, 5:-1, 7:-1, 18:-1, 21:1};
+const SOC  = {0:-1, 1:-1, 2:1, 12:1, 13:1, 14:-1, 23:1, 26:-1};
+function axis(vec, map){
+  let s=0, w=0;
+  for(const k in map){ const p=vec[k]; if(p===0) continue; s+=p*map[k]; w+=2*Math.abs(map[k]); }
+  return w ? {v:s/w, n:w/2} : null;
+}
+
+/* ---------------- state ---------------- */
+const M = 6;
+let lang = "sv";
+const ans = Array(Q.length).fill(null);
+const wt  = Array(Q.length).fill(1);
+let i = 0;
+let onResults = false;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+/* ---------------- chrome ---------------- */
+function paintChrome(){
+  const t = T[lang];
+  document.documentElement.lang = lang;
+  document.title = lang==="sv" ? "Valkompass Stockholms l\u00e4n" : "Election Compass Stockholm";
+  $("app").innerHTML = `
+  <div class="masthead"><div class="mh">
+    <div class="mh-top">
+      <div class="slug"><span class="swatch"></span><span>${esc(t.slug)}</span></div>
+      <div class="lang" role="group" aria-label="Language">
+        <button id="btn-sv" aria-pressed="${lang==="sv"}"><span class="fl">&#127480;&#127466;</span> SV</button>
+        <button id="btn-en" aria-pressed="${lang==="en"}"><span class="fl">&#127468;&#127463;</span> EN</button>
+      </div>
+    </div>
+    <h1>${esc(t.h1)}<span class="thin">${esc(t.h1sub)}</span></h1>
+    <p class="lede">${esc(t.lede)}</p>
+    <div class="tally">${t.tally.map(([n,l])=>`<div><b>${esc(n)}</b><span>${esc(l)}</span></div>`).join("")}</div>
+  </div></div>
+
+  <div class="prog" id="prog"><div class="in">
+    <div class="ticks" id="ticks"></div>
+    <div class="pc mono" id="pc"></div>
+  </div></div>
+
+  <div class="wrap">
+    <div id="quiz"></div>
+    <div id="results" class="hide"></div>
+  </div>
+
+  <div class="foot">${t.foot}</div>`;
+
+  $("btn-sv").onclick = ()=>setLang("sv");
+  $("btn-en").onclick = ()=>setLang("en");
+}
+
+function progress(){
+  const t = T[lang];
+  const n = ans.filter(a=>a!==null).length;
+  $("ticks").innerHTML = Q.map((_,k)=>
+    `<div class="tick${ans[k]!==null?" done":""}${k===i&&!onResults?" now":""}"></div>`).join("");
+  $("pc").textContent = t.answered(n);
+}
+
+/* ---------------- question view ---------------- */
+function render(){
+  const t = T[lang];
+  const area = Q[i][lang==="sv"?0:1];
+  const text = Q[i][lang==="sv"?2:3];
+  $("quiz").innerHTML = `
+  <div class="card">
+    <div class="card-hd">
+      <span class="area">${esc(area)}</span>
+      <span class="qno">${esc(t.qno(i+1,Q.length))}</span>
+    </div>
+    <div class="card-bd">
+      <p class="qtext">${esc(text)}</p>
+      <div class="scale" role="group">
+        ${t.scale.map(([v,l])=>`<button class="opt o${v}" data-v="${v}" aria-pressed="${ans[i]===v}">
+          <span class="kbd mono">${v+3}</span><span class="box"></span><span class="lbl">${esc(l)}</span></button>`).join("")}
+      </div>
+      <div class="weight">
+        <span>${esc(t.weight)}</span>
+        <button class="chip" data-w="1" aria-pressed="${wt[i]===1}">${esc(t.wNorm)}</button>
+        <button class="chip" data-w="2" aria-pressed="${wt[i]===2}">${esc(t.wHigh)}</button>
+      </div>
+      <p class="hint">${t.hint}</p>
+    </div>
+    <div class="nav">
+      <button class="btn" id="prev" ${i===0?"disabled":""}>${esc(t.prev)}</button>
+      <button class="btn pri" id="next">${esc(i===Q.length-1?t.show:t.next)}</button>
+    </div>
+  </div>`;
+
+  $("quiz").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    ans[i] = +b.dataset.v;
+    if(i<Q.length-1){ i++; render(); } else finish();
+  });
+  $("quiz").querySelectorAll(".chip").forEach(b=>b.onclick=()=>{ wt[i]=+b.dataset.w; render(); });
+  const p=$("prev"); if(p) p.onclick=()=>{ if(i>0){ i--; render(); } };
+  $("next").onclick=()=>{ if(i<Q.length-1){ i++; render(); } else finish(); };
+  progress();
+}
+
+/* ---------------- share ---------------- */
+function shareText(scored, t){
+  const top = scored.slice(0,3).map((s,n)=>`${n+1}. ${s.name} ${s.pct}%`).join("\n");
+  return `${t.shareLead}\n\n${top}\n\n${t.shareTag}`;
+}
+
+/* ---------------- results ---------------- */
+function finish(){
+  const t = T[lang];
+  const answered = ans.map((a,k)=>[a,k]).filter(([a])=>a!==null);
+  if(!answered.length){ alert(t.noAns); return; }
+  onResults = true;
+
+  const scored = P.map(([name,abbr,color,vec,flag])=>{
+    let num=0, den=0, cov=0;
+    for(const [a,k] of answered){
+      const p=vec[k]; if(p===0) continue;
+      num += wt[k]*(1-Math.abs(a-p)/4); den += wt[k]; cov++;
+    }
+    return { name, abbr, color, flag, cov,
+      pct: Math.round(((num+M*0.5)/(den+M))*100),
+      raw: Math.round((den? num/den : .5)*100) };
+  }).sort((a,b)=> b.pct-a.pct || b.cov-a.cov);
+  const max = scored[0].pct;
+
+  /* compass */
+  const uE = axis(ans.map(a=>a===null?0:a), ECON);
+  const uS = axis(ans.map(a=>a===null?0:a), SOC);
+  const px = v => 5 + (v+1)/2*90;   // inset so extremes don't sit on the frame
+  const py = v => 5 + (1-v)/2*90;
+  let plot = "";
+  if(uE && uS && uE.n>=2 && uS.n>=2){
+    const dots = P.map(([name,abbr,color,vec])=>{
+      const e=axis(vec,ECON), s=axis(vec,SOC);
+      if(!e||!s||e.n<3||s.n<3) return null;
+      const L=px(e.v);
+      return `<div class="dot${L>66?" flip":""}" style="left:${L}%;top:${py(s.v)}%;background:${color}" title="${esc(name)}"><em>${esc(abbr)}</em></div>`;
+    }).filter(Boolean).join("");
+    plot = `
+    <div class="plotwrap">
+      <div class="plot-hd">${esc(t.plotHd)}</div>
+      <div class="plot">
+        <div class="ax h"></div><div class="ax v"></div>
+        <span class="axlbl n">${esc(t.axN)}</span>
+        <span class="axlbl s">${esc(t.axS)}</span>
+        <span class="axlbl w">${esc(t.axW)}</span>
+        <span class="axlbl e">${esc(t.axE)}</span>
+        ${dots}
+        <div class="dot big${px(uE.v)>66?" flip":""}" style="left:${px(uE.v)}%;top:${py(uS.v)}%"><em>${esc(t.you)}</em></div>
+      </div>
+      <p class="plot-ft">${esc(t.plotFt)}</p>
+    </div>`;
+  }
+
+  $("results").innerHTML = `
+  <div class="res-hd">
+    <h2>${esc(t.resTitle)}</h2>
+    <span class="mono">${esc(t.resMeta(answered.length))}</span>
+  </div>
+  ${plot}
+  <div class="rows">
+    ${scored.map((s,n)=>`<div class="row${n===0?" gold":""}">
+      <div class="rk mono">${n+1}</div>
+      <div class="pname"><i style="background:${s.color}"></i><s>${esc(s.name)}</s><em>${esc(s.abbr)}</em></div>
+      <div class="bar"><span style="width:${s.pct/max*100}%;background:${s.color}"></span></div>
+      <div class="pct">${s.pct}%</div>
+      <div class="cov mono">${esc(t.cov(s.cov, answered.length, s.raw))}</div>
+      ${s.flag?`<div class="warn">${esc(t.nmr)}</div>`:""}
+    </div>`).join("")}
+  </div>
+
+  <div class="note"><b>${esc(t.howHd)}</b> ${t.how(M)}</div>
+  <div class="note blue"><b>${esc(t.gapHd(NOPLAT.length))}</b> ${esc(t.gap)}</div>
+
+  <details>
+    <summary>${esc(t.listSum(NOPLAT.length))}</summary>
+    <div class="plist">${NOPLAT.map(n=>`<div>${esc(n)}</div>`).join("")}</div>
+  </details>
+
+  <div class="nav" style="margin-top:26px;border:1px solid var(--line);border-radius:5px">
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn" id="back">${esc(t.back)}</button>
+      <button class="btn" id="again">${esc(t.again)}</button>
+    </div>
+    <a class="btn xbtn" id="xshare" target="_blank" rel="noopener"
+       href="https://x.com/intent/post?text=${encodeURIComponent(shareText(scored,t))}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.9 2H22l-6.8 7.8L23 22h-6.4l-5-6.6L5.8 22H2.7l7.3-8.3L1.5 2H8l4.7 6.2L18.9 2Zm-1.1 18h1.7L7.4 3.8H5.6L17.8 20Z"/></svg>
+      ${esc(t.shareX)}
+    </a>
+  </div>`;
+
+  $("quiz").classList.add("hide");
+  $("results").classList.remove("hide");
+  $("prog").classList.add("hide");
+  scrollTo({top:0,behavior:"smooth"});
+
+  $("back").onclick = ()=>{ onResults=false; $("results").classList.add("hide");
+    $("quiz").classList.remove("hide"); $("prog").classList.remove("hide"); i=0; render(); };
+  $("again").onclick = ()=>{ onResults=false; ans.fill(null); wt.fill(1); i=0;
+    $("results").classList.add("hide"); $("quiz").classList.remove("hide");
+    $("prog").classList.remove("hide"); render(); };
+}
+
+/* ---------------- language ---------------- */
+function setLang(l){
+  lang = l; paintChrome();
+  if(onResults) finish(); else render();
+}
+
+document.addEventListener("keydown", e=>{
+  if(onResults) return;
+  if(e.key>="1" && e.key<="5"){
+    const b=$("quiz").querySelector(`.opt[data-v="${+e.key-3}"]`);
+    if(b){ b.click(); e.preventDefault(); }
+  }
+  if(e.key==="v"||e.key==="V"){ wt[i]= wt[i]===1?2:1; render(); }
+  if(e.key==="ArrowRight" && i<Q.length-1){ i++; render(); }
+  if(e.key==="ArrowLeft"  && i>0){ i--; render(); }
+});
+
+paintChrome();
+render();
+</script>
+</body>
+</html>
