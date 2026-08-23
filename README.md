@@ -27,6 +27,50 @@ top the list on one answer.
 
 Inclusion of a party is not an endorsement. Every registered party on the ballot is shown.
 
+## Scoring: raw match vs the percentage
+
+Two different questions, both shown on every row.
+
+**Raw match** is plain weighted agreement, counted only over the questions where that
+party has a stated position:
+
+    raw = SUM w * (1 - |your answer - party position| / 4) / SUM w
+
+It answers: where this party has spoken, how often do we agree? It says nothing about
+how many questions that was.
+
+**The percentage** is the same figure with six units of prior weight pinned at 50%
+added in (Bayesian shrinkage), so thin coverage is pulled toward the middle:
+
+    pct = (SUM w * sim + 6 * 0.5) / (SUM w + 6)
+
+It answers: how confident should I be that this party is a good match overall?
+
+| Party has a position on | Raw | Shown % |
+| --- | --- | --- |
+| 25 of your 28 answers, perfect agreement | 100% | 90% |
+| all 28, perfect agreement | 100% | 91% |
+| 1 question only, perfect agreement | 100% | 57% |
+| 25 questions, total disagreement | 0% | 10% |
+| any coverage, half agreement | 50% | 50% |
+
+Three consequences:
+
+- **100% is unreachable.** A party agreeing on all 28 tops out at 91%. The score is a
+  confidence-weighted estimate, not a tally, so 90% does not mean 10% disagreement.
+- **50% is the fixed point.** Shrinkage lifts the floor as much as it caps the ceiling.
+- **Ranking uses the percentage, not raw.** That is the point. A single-issue party can
+  agree 100% of the time it has an opinion; sorting by raw would put every such party
+  above the parties with a full platform.
+
+Marking a question extra important doubles its weight `w`, which raises both the
+numerator and the coverage weight, so it also slightly reduces shrinkage for parties
+that have a position on it.
+
+`m = 6` is a chosen constant, not a derived one: it treats each party as starting with
+six questions' worth of neutral evidence. Lower it and single-issue parties climb;
+raise it and everything compresses toward 50% and broad platforms win on coverage alone.
+
 ## Source
 
 Party list retrieved from the Swedish Election Authority's election presentation,
