@@ -15,6 +15,11 @@ const ALLOWED_ORIGINS = [
 
 const DAY = 86400;
 
+/** Completions allowed per IP per day. This is an abuse ceiling, not a per-person
+ *  limit: households and offices share one public IP, so a value of 1 would count a
+ *  whole family or team once. Per-person dedupe is the browser's localStorage flag. */
+const PER_IP_DAILY = 25;
+
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
@@ -43,12 +48,16 @@ export default {
 
     if (request.method === "POST") {
       const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-      const key = "seen:" + (await hash(ip + "|" + (await salt(env)) + "|" + today()));
+      const key = "ip:" + (await hash(ip + "|" + (await salt(env)) + "|" + today()));
 
-      if (await env.COUNTER.get(key)) {
-        return new Response(JSON.stringify({ count: await total(), counted: false }), { headers });
+      const used = parseInt((await env.COUNTER.get(key)) || "0", 10);
+      if (used >= PER_IP_DAILY) {
+        return new Response(
+          JSON.stringify({ count: await total(), counted: false, reason: "ip-daily-limit" }),
+          { headers }
+        );
       }
-      await env.COUNTER.put(key, "1", { expirationTtl: DAY });
+      await env.COUNTER.put(key, String(used + 1), { expirationTtl: DAY });
 
       const next = (await total()) + 1;
       await env.COUNTER.put("total", String(next));

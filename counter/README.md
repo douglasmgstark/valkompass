@@ -4,7 +4,7 @@ A single Cloudflare Worker backing the "N people have taken this" line on the pa
 Static hosting cannot keep a number, so this is the one piece of state.
 
 - `GET  /count` returns `{ count }`
-- `POST /count` increments and returns `{ count, counted }`, at most once per IP per day
+- `POST /count` increments and returns `{ count, counted }`, up to 25 times per IP per day
 
 ## Privacy
 
@@ -44,6 +44,9 @@ no request at all and the line stays hidden.
   domain there if the page moves.
 - `MIN_SHOW` in `index.html` hides the number until it passes 50, so the page never
   advertises a low count.
+- Per-person dedupe is the browser's `localStorage` flag. The per-IP daily cap
+  (`PER_IP_DAILY`, 25) is only an abuse ceiling: a household or an office shares one
+  public IP, so a cap of 1 would count a whole family or team once.
 - The count is approximate by design. KV is eventually consistent, so two simultaneous
-  completions can collide and register as one. Per-IP-per-day dedupe stops casual
-  inflation but a determined person can still call the endpoint repeatedly.
+  completions can collide and register as one, and a determined person can still spend
+  an IP's 25 daily slots deliberately.
