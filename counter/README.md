@@ -42,8 +42,9 @@ no request at all and the line stays hidden.
 
 - `ALLOWED_ORIGINS` in `src/worker.js` restricts CORS to the Pages origin. Add a custom
   domain there if the page moves.
-- `MIN_SHOW` in `index.html` is the floor below which the number is hidden. Set to 1,
-  so it shows as soon as there is at least one completion.
+- The count is displayed in the masthead, top right under the language switch. It is
+  read with `GET` on page load and refreshed from the `POST` response after a run.
+- `MIN_SHOW` in `index.html` is the floor below which it stays hidden. Set to 1.
 - Per-person dedupe is the browser's `localStorage` flag. The per-IP daily cap
   (`PER_IP_DAILY`, 25) is only an abuse ceiling: a household or an office shares one
   public IP, so a cap of 1 would count a whole family or team once.

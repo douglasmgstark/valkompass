@@ -76,8 +76,8 @@ raise it and everything compresses toward 50% and broad platforms win on coverag
 An optional "N people have taken this" line, backed by a Cloudflare Worker in
 [`counter/`](counter/) because static hosting cannot keep a number. It counts
 completions, not page views: one increment when results first render, deduped per
-browser and capped per IP per day. It appears on the results screen once there is at
-least one completion. The visitor's IP is hashed with a salt and kept 24 hours purely for that
+browser and capped per IP per day. It is shown in the top right of the masthead, read on page load and
+updated when you finish a run. The visitor's IP is hashed with a salt and kept 24 hours purely for that
 dedupe, never stored.
 
 It is off until `COUNTER_URL` is set in `index.html`; while empty the page makes no

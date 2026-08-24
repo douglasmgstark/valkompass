@@ -176,7 +176,9 @@ h1 .thin{display:block;font-weight:500;color:var(--ink-2);font-size:.52em;letter
 .res-hd{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin:34px 0 0}
 .res-hd h2{font-size:clamp(25px,4.8vw,34px);font-weight:800}
 .res-hd .mono{font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
-.taken{margin-top:7px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+.mh-right{display:flex;flex-direction:column;align-items:flex-end;gap:9px;flex:none}
+.taken{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.04em;text-align:right;white-space:nowrap}
+.taken b{color:var(--ink-2);font-weight:600}
 .taken[hidden]{display:none}
 .rows{display:flex;flex-direction:column;gap:1px;margin-top:18px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--line-2);box-shadow:var(--sh-1)}
 .row{background:var(--card);padding:12px 16px;display:grid;grid-template-columns:24px 1fr 100px 56px;gap:14px;align-items:center;transition:background .13s}
@@ -387,9 +389,12 @@ function paintChrome(){
   <div class="masthead"><div class="mh">
     <div class="mh-top">
       <div class="slug"><span class="swatch"></span><span>${esc(t.slug)}</span></div>
-      <div class="lang" role="group" aria-label="Language">
-        <button id="btn-sv" aria-pressed="${lang==="sv"}"><span class="fl">&#127480;&#127466;</span> SV</button>
-        <button id="btn-en" aria-pressed="${lang==="en"}"><span class="fl">&#127468;&#127463;</span> EN</button>
+      <div class="mh-right">
+        <div class="lang" role="group" aria-label="Language">
+          <button id="btn-sv" aria-pressed="${lang==="sv"}"><span class="fl">&#127480;&#127466;</span> SV</button>
+          <button id="btn-en" aria-pressed="${lang==="en"}"><span class="fl">&#127468;&#127463;</span> EN</button>
+        </div>
+        <div class="taken" id="taken" hidden></div>
       </div>
     </div>
     <h1>${esc(t.h1)}<span class="thin">${esc(t.h1sub)}</span></h1>
@@ -411,6 +416,7 @@ function paintChrome(){
 
   $("btn-sv").onclick = ()=>setLang("sv");
   $("btn-en").onclick = ()=>setLang("en");
+  paintTaken();
 }
 
 function progress(){
@@ -476,6 +482,16 @@ function paintTaken(){
   const f = takenCount.toLocaleString(lang === "sv" ? "sv-SE" : "en-GB");
   el.textContent = T[lang].taken(f, takenCount);
   el.hidden = false;
+}
+
+async function loadCount(){
+  if(!COUNTER_URL) return;
+  try{
+    const r = await fetch(COUNTER_URL);
+    if(!r.ok) return;
+    const j = await r.json();
+    if(typeof j.count === "number"){ takenCount = j.count; paintTaken(); }
+  }catch(e){ /* decorative */ }
 }
 
 async function bumpCounter(){
@@ -550,7 +566,6 @@ function finish(){
     <h2>${esc(t.resTitle)}</h2>
     <span class="mono">${esc(t.resMeta(answered.length))}</span>
   </div>
-  <div class="taken" id="taken" hidden></div>
   ${plot}
   <div class="rows">
     ${scored.map((s,n)=>`<div class="row${n===0?" gold":""}">
@@ -615,6 +630,7 @@ document.addEventListener("keydown", e=>{
 
 paintChrome();
 render();
+loadCount();
 </script>
 </body>
 </html>
