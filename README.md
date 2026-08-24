@@ -71,6 +71,18 @@ that have a position on it.
 six questions' worth of neutral evidence. Lower it and single-issue parties climb;
 raise it and everything compresses toward 50% and broad platforms win on coverage alone.
 
+## Completion counter
+
+An optional "N people have taken this" line, backed by a Cloudflare Worker in
+[`counter/`](counter/) because static hosting cannot keep a number. It counts
+completions, not page views: one increment when results first render, deduped per
+browser and per IP per day, hidden until it passes 50 so the page never advertises a
+low count. The visitor's IP is hashed with a salt and kept 24 hours purely for that
+dedupe, never stored.
+
+It is off until `COUNTER_URL` is set in `index.html`; while empty the page makes no
+request at all. See [`counter/README.md`](counter/README.md) to deploy.
+
 ## Source
 
 Party list retrieved from the Swedish Election Authority's election presentation,

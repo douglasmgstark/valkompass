@@ -176,6 +176,8 @@ h1 .thin{display:block;font-weight:500;color:var(--ink-2);font-size:.52em;letter
 .res-hd{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:10px;margin:34px 0 0}
 .res-hd h2{font-size:clamp(25px,4.8vw,34px);font-weight:800}
 .res-hd .mono{font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+.taken{margin-top:7px;font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.04em}
+.taken[hidden]{display:none}
 .rows{display:flex;flex-direction:column;gap:1px;margin-top:18px;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--line-2);box-shadow:var(--sh-1)}
 .row{background:var(--card);padding:12px 16px;display:grid;grid-template-columns:24px 1fr 100px 56px;gap:14px;align-items:center;transition:background .13s}
 .row:hover{background:var(--card-2)}
@@ -316,6 +318,7 @@ const T = {
   listSum:n=>`Visa alla ${n} partier utan angivna st\u00e5ndpunkter`,
   back:"\u2190 \u00c4ndra svar", again:"B\u00f6rja om",
   shareX:"Dela p\u00e5 X",
+  taken:(f,n)=> n===1 ? "1 person har gjort testet" : f+" personer har gjort testet",
   shareLead:"Jag k\u00f6rde valkompassen f\u00f6r Stockholms l\u00e4n inf\u00f6r riksdagsvalet 2026. Mina tre n\u00e4rmaste partier:",
   shareTag:"#val2026 #valkompassen",
   noAns:"Svara p\u00e5 minst ett p\u00e5st\u00e5ende f\u00f6rst.",
@@ -347,6 +350,7 @@ const T = {
   listSum:n=>`Show all ${n} parties with no stated positions`,
   back:"\u2190 Change answers", again:"Start over",
   shareX:"Share on X",
+  taken:(f,n)=> n===1 ? "1 person has taken this" : f+" people have taken this",
   shareLead:"I took the election compass for Stockholm County ahead of Sweden's 2026 general election. My three closest parties:",
   shareTag:"#val2026 #swedishelection",
   noAns:"Answer at least one statement first.",
@@ -457,6 +461,36 @@ function render(){
   progress();
 }
 
+/* ---------------- completion counter ---------------- */
+/* Set to the deployed Worker endpoint, e.g.
+   "https://valkompass-counter.SUBDOMAIN.workers.dev/count".
+   Left empty the counter is simply never shown and nothing is requested. */
+const COUNTER_URL = "";
+const MIN_SHOW = 50;          /* hide the number until it is worth showing */
+const STORE_KEY = "vk_taken_v1";
+let takenCount = null, posted = false;
+
+function paintTaken(){
+  const el = $("taken");
+  if(!el || takenCount === null || takenCount < MIN_SHOW) return;
+  const f = takenCount.toLocaleString(lang === "sv" ? "sv-SE" : "en-GB");
+  el.textContent = T[lang].taken(f, takenCount);
+  el.hidden = false;
+}
+
+async function bumpCounter(){
+  if(!COUNTER_URL) return;
+  let already = false;
+  try{ already = localStorage.getItem(STORE_KEY) === "1"; }catch(e){}
+  try{
+    const r = await fetch(COUNTER_URL, { method: already ? "GET" : "POST" });
+    if(!r.ok) return;
+    const j = await r.json();
+    if(!already){ try{ localStorage.setItem(STORE_KEY,"1"); }catch(e){} }
+    if(typeof j.count === "number"){ takenCount = j.count; paintTaken(); }
+  }catch(e){ /* decorative: never let the counter affect the results */ }
+}
+
 /* ---------------- share ---------------- */
 function shareText(scored, t){
   const top = scored.slice(0,3).map((s,n)=>`${n+1}. ${s.name} ${s.pct}%`).join("\n");
@@ -516,6 +550,7 @@ function finish(){
     <h2>${esc(t.resTitle)}</h2>
     <span class="mono">${esc(t.resMeta(answered.length))}</span>
   </div>
+  <div class="taken" id="taken" hidden></div>
   ${plot}
   <div class="rows">
     ${scored.map((s,n)=>`<div class="row${n===0?" gold":""}">
@@ -552,6 +587,7 @@ function finish(){
   $("results").classList.remove("hide");
   $("prog").classList.add("hide");
   scrollTo({top:0,behavior:"smooth"});
+  if(!posted){ posted = true; bumpCounter(); } else { paintTaken(); }
 
   $("back").onclick = ()=>{ onResults=false; $("results").classList.add("hide");
     $("quiz").classList.remove("hide"); $("prog").classList.remove("hide"); i=0; render(); };

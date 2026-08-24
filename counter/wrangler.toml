@@ -1,0 +1,13 @@
+name = "valkompass-counter"
+main = "src/worker.js"
+compatibility_date = "2026-08-01"
+
+# Created by: wrangler kv namespace create COUNTER
+# Paste the printed id below.
+[[kv_namespaces]]
+binding = "COUNTER"
+id = "REPLACE_WITH_KV_NAMESPACE_ID"
+
+# Not a secret in the security sense, just a salt so the daily dedupe hashes
+# cannot be reversed to an IP by guessing. Set with:
+#   wrangler secret put SALT
