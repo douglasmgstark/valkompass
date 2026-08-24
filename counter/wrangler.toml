@@ -6,8 +6,6 @@ compatibility_date = "2026-08-01"
 # Paste the printed id below.
 [[kv_namespaces]]
 binding = "COUNTER"
-id = "REPLACE_WITH_KV_NAMESPACE_ID"
+id = "2e80a13c58bc4ea2bf218cd02e727f9c"
 
-# Not a secret in the security sense, just a salt so the daily dedupe hashes
-# cannot be reversed to an IP by guessing. Set with:
-#   wrangler secret put SALT
+# No SALT secret needed: the Worker generates one on first use and keeps it in KV.
