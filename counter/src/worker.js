@@ -43,7 +43,7 @@ export default {
 
     if (request.method === "POST") {
       const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-      const key = "seen:" + (await hash(ip + "|" + env.SALT + "|" + today()));
+      const key = "seen:" + (await hash(ip + "|" + (await salt(env)) + "|" + today()));
 
       if (await env.COUNTER.get(key)) {
         return new Response(JSON.stringify({ count: await total(), counted: false }), { headers });
@@ -58,6 +58,18 @@ export default {
     return new Response(JSON.stringify({ error: "method not allowed" }), { status: 405, headers });
   },
 };
+
+/** Self-provisioning salt: generated once on first use and kept in KV, so there is
+ *  no secret to set by hand. An explicit SALT binding, if present, wins. */
+async function salt(env) {
+  if (env.SALT) return env.SALT;
+  let s = await env.COUNTER.get("salt");
+  if (!s) {
+    s = crypto.randomUUID() + crypto.randomUUID();
+    await env.COUNTER.put("salt", s);
+  }
+  return s;
+}
 
 function today() {
   return new Date().toISOString().slice(0, 10);
